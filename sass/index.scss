@@ -1,0 +1,317 @@
+#header_nav {
+    min-width: 1200px;
+    height: 36px;
+    background-color: #2e2828;
+    font-size: 12px;
+}
+
+.container {
+    width: 1200px;
+    height: 36px;
+    margin: 0 auto;
+}
+
+@mixin style1 {
+    background: url(../img/icon-common.svg) no-repeat;
+    width: 14px;
+    height: 14px;
+    background-position: -71px 0;
+    position: absolute;
+    top: 13px;
+    right: 2px;
+}
+
+@mixin style2 {
+    background: url(../img/icon-common.svg) no-repeat;
+    width: 14px;
+    height: 14px;
+    background-position: -85px 0;
+    position: absolute;
+    top: 13px;
+    right: 2px;
+}
+
+.nav {
+    display: flex;
+    line-height: 36px;
+    justify-content: space-between;
+    .left {
+        display: flex;
+        li {
+            padding: 0 8px;
+            position: relative;
+        }
+        li:before {
+            content: '';
+            width: 1px;
+            height: 10px;
+            display: block;
+            position: absolute;
+            top: 13px;
+            left: 0;
+            background-color: #414141;
+        }
+    }
+    .right {
+        display: flex;
+        li {
+            padding: 0 8px;
+            position: relative;
+        }
+        li:before {
+            content: '';
+            width: 1px;
+            height: 10px;
+            position: absolute;
+            top: 13px;
+            left: 0;
+            background-color: #414141;
+        }
+        .serve {
+            padding-right: 18px;
+            span {
+                @include style1;
+            }
+        }
+        .serve:hover span {
+            @include style2;
+        }
+        .serve:hover {
+            background-color: #fefefe;
+            a {
+                color: #cf0a2c;
+            }
+        }
+        .serve:hover:before {
+            display: none;
+        }
+        .net_nav {
+            padding-right: 18px;
+            span {
+                @include style1;
+            }
+        }
+        .net_nav:hover span {
+            @include style2;
+        }
+        .net_nav:hover {
+            background-color: #fefefe;
+            a {
+                color: #cf0a2c;
+            }
+        }
+        .net_nav:hover::before {
+            display: none;
+        }
+        .phone_v {
+            padding-right: 18px;
+            span {
+                @include style1;
+            }
+        }
+        .phone_v:hover span {
+            @include style2;
+        }
+        .phone_v:hover {
+            background-color: #fefefe;
+            a {
+                color: #cf0a2c;
+            }
+        }
+        .phone_v:hover::before {
+            display: none;
+        }
+    }
+}
+
+.nav .left li:nth-of-type(1) {
+    padding-left: 0;
+}
+
+.nav .left .more span {
+    @include style1;
+}
+
+.nav .left .more {
+    padding-right: 18px;
+}
+
+.nav .left .more:hover {
+    background-color: #fefefe;
+    a {
+        color: #cf0a2c;
+    }
+}
+
+.nav .left .more:hover::before {
+    display: none;
+}
+
+.nav .left .more:hover span {
+    @include style2;
+}
+
+.nav .right li:nth-of-type(1) {
+    padding-left: 0;
+}
+
+#header_logo {
+    min-width: 1200px;
+    height: 74px;
+    padding: 18px 0 15px;
+    .logo_wrap {
+        display: flex;
+        justify-content: space-between;
+        line-height: 36px;
+        .left {
+            a {
+                color: #2e2828;
+            }
+            display: flex;
+            .m1 {
+                height: 36px;
+                width: 205px;
+            }
+            .m2 {
+                width: 74px;
+                height: 24px;
+                margin-left: 22px;
+            }
+            .m3 {
+                width: 74px;
+                height: 24px;
+            }
+            img {
+                margin: 0 12px;
+            }
+            span {
+                margin: 0 12px;
+            }
+        }
+        .right {
+            display: flex;
+            position: relative;
+            .m40 {
+                position: absolute;
+                top: 0;
+                right: 86px;
+                font-size: 12px;
+                line-height: 30px;
+            }
+            .m40:hover,
+            .r30:hover {
+                color: #2e2828;
+            }
+            .r30 {
+                position: absolute;
+                top: 0;
+                right: 36px;
+                font-size: 12px;
+                line-height: 30px;
+            }
+            .search {
+                height: 30px;
+                width: 190px;
+                background-color: #eee;
+                border: 0;
+                border-radius: 15px 0 0 15px;
+                padding-left: 15px;
+            }
+            .search:focus+.m40 {
+                display: none;
+            }
+            .search:focus+.m40+.r30 {
+                display: none;
+            }
+            // .search:hover {
+            //     border: 1px solid #ccc;
+            //     border-right: 0;
+            // }
+            .sub {
+                height: 30px;
+                width: 35px;
+                background-color: #eee;
+                border: 0;
+                border-radius: 0 15px 15px 0;
+            }
+            // .sub:hover {
+            //     border: 1px solid #ccc;
+            //     border-left: 0;
+            // }
+            span {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                width: 20px;
+                height: 20px;
+                background: url(../img/icon-common.svg) no-repeat;
+                background-position: -139px 0;
+            }
+            span:hover {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                width: 20px;
+                height: 20px;
+                background: url(../img/icon-common.svg) no-repeat;
+                background-position: -159px 0;
+            }
+        }
+    }
+}
+
+// & 指向父选择器
+// a{
+//   color: blue;
+//   &:hover{
+//     color: red;
+//   }
+// }
+// .content{
+//   width: 500px;
+//   &-title{
+//     color: red;
+//   }
+//   &-main{
+//     color: blue;
+//   }
+// }
+// @import 引入外部样式
+// @import 'header.scss';
+// @mixin 混合器
+// @mixin nostyle {
+//   list-style: none;
+//   li{
+//     padding: 0;
+//     color: blue;
+//   }
+// }
+// .list{
+//   width: 500px;
+//   @include nostyle;
+// }
+// 混合器传参
+// @mixin common($w,$h,$c) {
+//   width: $w;
+//   height: $h;
+//   color: $c;
+// }
+// .box1{
+//   background-color: #ccc;
+//   @include common(500px,200px,red);
+// }
+// .box2{
+//   padding: 10px;
+//   @include common(300px,100px,blue);
+// }
+// // 继承
+// .box3{
+//   padding: 20px;
+//   margin: 10px;
+//   font-size: 20px;
+// }
+// .box4{
+//   width: 500px;
+//   background: pink;
+//   @extend .box3;
+// }
