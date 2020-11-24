@@ -43,7 +43,8 @@
         dt {
             width: $w;
             text-align: center;
-            background-color: #eee;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
             color: #666;
         }
         .last {
@@ -132,9 +133,39 @@
         .net_nav {
             padding-right: 18px;
             position: relative;
-            @include style_nav(300px);
+            // @include style_nav(300px);
             span {
                 @include style1;
+            }
+            .net_d {
+                position: absolute;
+                top: 36px;
+                right: 0;
+                width: 500px;
+                // height: 400px;
+                background-color: #fff;
+                z-index: 99;
+                padding: 20px;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                display: none;
+                dl {
+                    float: left;
+                    margin: 0 30px;
+                    dt {
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: #333;
+                    }
+                }
+            }
+        }
+        .net_nav:hover .net_d {
+            display: block;
+            dl dd:hover {
+                color: #cf0a2c;
+                cursor: pointer;
             }
         }
         .net_nav:hover span {
@@ -186,7 +217,8 @@
 }
 
 .nav .left .more:hover {
-    background-color: #fefefe;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     a {
         color: #cf0a2c;
     }
