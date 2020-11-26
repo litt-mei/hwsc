@@ -14,9 +14,13 @@
     <div class="header_div"></div>
 
     <div id="banner">
-        <!-- <span></span> -->
-
+        <ul class="banner_list">
+            <li class="banner_first"></li>
+            <li class="banner_second"></li>
+        </ul>
         <div class="banner_inner container">
+            <p class="b_left">&lt;</p>
+            <p class="b_right">&gt;</p>
             <ul class="b_list">
                 <li>
                     手机 <i>></i>
@@ -231,7 +235,7 @@
         <div class="main_warp container">
             <div class="login">
                 <img src="../img/login.png" alt="">
-                <p>
+                <p class="login_second">
                     <span><i> 您好！请 </i>登录 / 注册</span>
                     <a href="#" class="a1">新人福利</a>
                     <a href="#" class="a2">会员频道</a>
@@ -281,16 +285,16 @@
         <div class="main_1 container">
             <ul class="new">
                 <li>
-                    <a href="#"><img src="../img/main1.png" alt=""></a>
+                    <a href="./product.html"><img src="../img/main1.png" alt=""></a>
                 </li>
                 <li>
-                    <a href="#"><img src="../img/main2.jpg" alt=""></a>
+                    <a href="./product.html"><img src="../img/main2.jpg" alt=""></a>
                 </li>
                 <li>
-                    <a href="#"><img src="../img/main3.jpg" alt=""></a>
+                    <a href="./product.html"><img src="../img/main3.jpg" alt=""></a>
                 </li>
                 <li>
-                    <a href="#"><img src="../img/main4.png" alt=""></a>
+                    <a href="./product.html"><img src="../img/main4.png" alt=""></a>
                 </li>
             </ul>
         </div>
@@ -316,17 +320,37 @@
         </div>
     </div>
 
+    <ul class="contact_list">
+        <li class="cart">
+            <p> 购物车</p>
+            <i><em class="number_item">1</em></i>
+        </li>
+        <li class="customer">
+            <p>在线客服</p>
+            <i></i>
+        </li>
+        <li class="help">
+            <p>自助服务</p>
+            <i></i>
+        </li>
+        <li class="back_top">
+            <p>置顶</p>
+            <i></i>
+            <a href="#"></a>
+        </li>
+    </ul>
+
     <div class="footer_div"></div>
 
 
 
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/banner.js"></script>
     <script>
         $(function() {
             $('.header_div').load('header.html');
             $('.footer_div').load('footer.html');
-
         })
     </script>
 

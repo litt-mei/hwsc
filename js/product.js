@@ -1,4 +1,38 @@
 $(function() {
+    let product_id = localStorage.getItem('product')
+
+    $.ajax({
+        url: '../data/message.json',
+        type: 'get',
+        dataType: 'json',
+        success: function(json) {
+            for (let i = 0, len = json.length; i < len; i++) {
+                if (json[i].id == product_id) {
+                    $('.full_title').html(json[i].full_title)
+                    $('.f').html(json[i].price)
+                }
+            }
+        },
+        error: function(err) {
+            console.log(err)
+        }
+    })
+
+    $('.plus1').click(() => {
+        console.log(1)
+        let num = $('input.amount1').val()
+        num++
+        $('input.amount1').val(num)
+    })
+
+    $('.minus1').click(() => {
+        let num = $('input.amount1').val()
+        if (num > 1) {
+            num--
+            $('input.amount1').val(num)
+        }
+    })
+
     var s1 = $('.i_list .s1');
     var s2 = $('.i_list .s2');
     var lis = $('.list_u li');

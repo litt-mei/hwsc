@@ -13,15 +13,40 @@ window.onload = function() {
             return;
         }
 
-        localStorage.setItem('username', us);
-        localStorage.setItem('password', pa);
+        $.ajax({
+            url: '../data/user.php',
+            type: 'post',
+            dataType: 'text',
+            data: {
+                username: us,
+                password: pa,
+                request_type: 'login'
+            },
+            success: function(result) {
+                result = eval('(' + result + ')')
+
+                if (result.error == 2) {
+                    alert('请先注册')
+                } else if (result.error == 1) {
+                    alert('密码或用户名错误')
+                } else if (result.error == 0) {
+                    location.href = './index.html'
+                    localStorage.setItem('username', us);
+                    // localStorage.setItem('password', pa);
+                }
+            },
+            error: function(err) {
+                console.log(err)
+            }
+        })
+
 
         // if (getCookie('username')) {
         //     user.value = getCookie('username');
         //     pass.value = getCookie('password')
         // }
 
-        location.href = '../index.html'
+
     }
     sign.onclick = function() {
         console.log(1)
@@ -32,7 +57,33 @@ window.onload = function() {
             return;
         }
 
-        location.href = '../index.html'
+        $.ajax({
+            url: '../data/user.php',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                username: us,
+                password: pa,
+                request_type: 'signin'
+            },
+            success: function(result) {
+                // result = eval('(' + result + ')')
+
+                if (result.error == 0) {
+                    alert('注册成功, 请登录')
+                    $('.form .username').val('')
+                    $('.form .password').val('')
+                        // location.href = './index.html'
+                        // localStorage.setItem('username', us);
+                        // localStorage.setItem('password', pa);
+                }
+            },
+            error: function(err) {
+                console.log(err)
+            }
+        })
+
+        // location.href = '../index.html'
     }
 
 }

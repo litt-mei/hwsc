@@ -23,6 +23,22 @@ $y) {
     background-position: $x $y;
 }
 
+#header_nav {
+    .left li:before {
+        background-color: #ccc;
+    }
+    .right li:before {
+        background-color: #ccc;
+    }
+    background-color: #f9f9f9;
+    ._cart {
+        background-color: #f9f9f9;
+    }
+    a:hover {
+        color: #ca141d;
+    }
+}
+
 .container {
     background: #f9f9f9;
     #nav {
@@ -381,6 +397,9 @@ $y) {
             background: white;
             text-align: center;
         }
+    }
+    .cart {
+        padding-bottom: 0;
     }
     .cart i {
         @include navIcon(0,
