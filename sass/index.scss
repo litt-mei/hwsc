@@ -14,19 +14,15 @@
         height: 100%;
         .b_list {
             position: absolute;
-            // top: 126px;
-            // left: 350px;
             top: 20px;
             left: 0;
             width: 184px;
-            height: 420px;
             border-radius: 8px;
-            background-color: #f9f9f9;
+            background-color: #f8f8f8;
             box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
             li {
                 height: 20px;
                 padding: 10px 0 10px 16px;
-                position: relative;
                 overflow: hidden;
                 color: #999;
                 i {
@@ -35,28 +31,50 @@
                 }
                 .l_list {
                     width: 516px;
-                    height: 418px;
+                    height: 374px;
                     position: absolute;
                     top: 0;
                     left: 184px;
                     background: #fff;
                     z-index: 9999;
-                    // display: none;
+                    padding: 13px 0;
+                    display: none;
+                    border-radius: 0 8px 8px 0;
+                    box-shadow: 5px 5px 5px rgba(247, 239, 239, 0.2);
                     li {
+                        width: 174px;
                         height: 46px;
-                        border-bottom: 1px solid #ccc;
+                        font-size: 14px;
+                        margin: 10px 20px;
+                        border-radius: 10px;
+                        float: left;
                         img {
-                            width: 36px;
+                            width: 34px;
                             height: 46px;
+                            margin-right: 10px;
+                        }
+                        a:hover {
+                            color: #999;
                         }
                     }
+                    li:hover {
+                        background-color: #f9f9f9;
+                    }
                 }
+            }
+            li:hover .l_list {
+                display: block;
             }
         }
     }
     .b_list li:hover {
         background-color: #fff;
-        // display: block;
+    }
+    .b_list li:nth-of-type(1):hover {
+        border-radius: 8px 0 0 0;
+    }
+    .b_list li:nth-last-of-type(1) {
+        border-radius: 0 0 0 8px;
     }
 }
 
@@ -156,15 +174,18 @@
             }
             span {
                 display: flex;
-                font-size: 14px;
+                font-size: 12px;
                 a {
-                    margin: 8px 14px;
+                    margin: 8px;
                     img {
                         width: 20px;
                         height: 20px;
                         margin-top: -2px;
                         margin-right: 4px;
                     }
+                }
+                a:hover {
+                    color: #cf0a2c;
                 }
             }
         }
@@ -193,6 +214,17 @@
             font-size: 26px;
             margin-top: 34px;
             margin-bottom: 8px;
+            position: relative;
+            a {
+                position: absolute;
+                top: 4px;
+                right: 6px;
+                font-size: 16px;
+                color: #333;
+            }
+            a:hover {
+                color: #cf0a2c;
+            }
         }
         .main2_wrap {
             display: flex;

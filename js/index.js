@@ -5,7 +5,7 @@ $(function() {
         dataType: 'json',
         cache: false,
         success: function(json) {
-            main2_listData(json)
+            main2_listData(json);
         },
         error: function(err) {
             console.log(err)
@@ -27,4 +27,30 @@ $(function() {
 
         $('.main2_list').append(result)
     }
+
+    // $.ajax({
+    //     url: '../data/index_data.json',
+    //     type: 'get',
+    //     dataType: 'json',
+    //     cache: false,
+    //     success: function(json) {
+    //         b_listData(json)
+    //     },
+    //     error: function(err) {
+    //         console.log(err)
+    //     }
+    // })
+
+    // function b_listData(data) {
+    //     let result = '',
+
+    //         for (let i = 0, len = data.length; i < len; i++) {
+    //             result += `
+    //          <li>
+    //             <img src=${data[i].img_url} alt="">${data[i].name}
+    //          </li>
+    //         `
+    //         }
+    //     $('.l_list').append(result);
+    // }
 })

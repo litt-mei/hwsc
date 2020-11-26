@@ -209,12 +209,20 @@
     }
 }
 
+// .p_wrap {
+//     position: fixed;
+//     top: 0px;
+//     background: rgb(255, 255, 255);
+//     width: 100%;
+//     z-index: 100;
+// }
 .p_m {
     text-align: center;
     font-size: 18px;
     padding-top: 20px;
     margin-top: 50px;
     border-top: 1px solid #ccc;
+    background-color: #fff;
     span {
         display: inline-block;
         margin: 20px 25px;
