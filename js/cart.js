@@ -61,19 +61,12 @@ $(function() {
                             <p class="price">${goodsData[j].price}</p>
                             <p class="amount_module">
                                 <span class="minus">-</span>
-                                <input type="number" class="amount deal" value=${data[i].product_amount} min="1"></input>
+                                <input type="number" class="amount deal" value=${data[i].product_amount} min="1" readonly></input>
                                 <span class="plus">+</span>
                             </p>
                             <p class="total_price">￥${parseInt(goodsData[j].price.substring(1)) * parseInt(data[i].product_amount) }</p>
                             <div class="delete">
                                 删除
-                                <span id="delete_confirm">
-                                    <p>您确定要删除该商品?</p>
-                                    <div class="confirm_button">
-                                        <span class="yes">是</span>
-                                        <span class="no">否</span>
-                                    </div>
-                                </span>
                             </div> 
                                 
                         </div>
@@ -86,6 +79,9 @@ $(function() {
 
         })
 
+        $('.my_cart').on('click', '.goods_list .delete', function() {
+            $('.goods_list').remove();
+        })
 
         $('.my_cart').on('click', '.goods_list .amount_module .minus', function(e) {
             let num = $(e.target).next().val()
