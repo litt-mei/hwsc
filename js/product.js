@@ -38,26 +38,40 @@ $(function() {
     var lis = $('.list_u li');
     var ul = $('.list_u');
     var width = ul.css('width');
-    // var p_top = $('.p_m');
 
     s1.click(() => {
-        $('.list_u').scrollLeft(60);
+        for (let i = 0, len = lis.length; i < len / 2; i++) {
+            $('.list_u').scrollLeft(70 * i);
+        }
     });
 
     s2.click(() => {
-        console.log(2)
+        for (let i = 0, len = lis.length; i < len / 2; i++) {
+            $('.list_u').scrollLeft(-70 * i);
+        }
     })
 
-    // $(window).scroll(() => {
-    //     var stop = $('body').scrollTop()
 
-    //     if (stop >= 90) {
-    //         t = $(p_top).css('position');
-    //         t.top = 0;
-    //     } else {
-    //         $(p_top).css('position') = 'static';
-    //     }
-    // })
+    //点击加入购物车
+    $('.r_a').on('click', '.r_a1', function() {
+        $.ajax({
+            url: '../data/user.php',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                username: localStorage.getItem('username'),
+                productId: localStorage.getItem('product'),
+                productAmount: $('input.amount1').val(),
+                request_type: 'update_cart'
+            },
+            success: function(json) {
+                console.log(json)
+            },
+            error: function(err) {
+                console.log(err)
+            }
+        })
+    })
 
 
 })
